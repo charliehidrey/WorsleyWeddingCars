@@ -97,3 +97,37 @@ footer{background:#050505;color:#888;text-align:center;padding:60px 7vw;border-t
 .review-card p { margin: 0; line-height: 1.7; color: #444; font-size: .95rem; }
 .review-card .review-service { margin-top: 15px; color: #9d7635; font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
 @media (max-width: 760px) { .reviews-grid { grid-template-columns: 1fr; } .review-card { padding: 23px; } }
+
+
+/* Wedding hire rentals */
+.rental-services{padding:72px 5%;max-width:1250px;margin:0 auto;border-top:1px solid rgba(201,164,92,.25)}
+.rental-services .section-heading{margin-bottom:34px}
+.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.service-card{background:#101010;border:1px solid #c9a45c;overflow:hidden;color:#fff}
+.service-card .service-content{color:#fff}
+.service-card .service-content h3{color:#fff;margin-top:0}
+.service-card .service-content p{color:#c8c8c8}
+.rental-slider{position:relative;aspect-ratio:1.45/1;background:#151515;overflow:hidden}
+.rental-slider img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+.rental-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:1px solid #c9a45c;background:rgba(0,0,0,.72);color:#fff;font-size:26px;cursor:pointer;z-index:2}
+.rental-prev{left:14px}.rental-next{right:14px}
+.rental-counter{position:absolute;right:14px;bottom:14px;background:rgba(0,0,0,.75);border:1px solid #8f753d;padding:7px 10px;color:#fff;font-size:12px;letter-spacing:1px}
+.rental-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:7px}
+.rental-dot{width:8px;height:8px;border-radius:50%;border:1px solid #fff;background:transparent;padding:0;cursor:pointer}
+.rental-dot.active{background:#c9a45c;border-color:#c9a45c}
+.service-content{padding:28px}
+.rental-price-row{display:flex;gap:30px;margin:20px 0}
+.rental-price{border-left:1px solid #5b4b2c;padding-left:14px}
+.rental-price span{display:block;color:#c9a45c;font-size:.7rem;letter-spacing:2px}
+.rental-price strong{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:30px;margin-top:4px;color:#fff}
+.service-card .cta-button{border:1px solid #c9a45c;padding:14px 22px;display:inline-flex;align-items:center;justify-content:center;color:#c9a45c;background:transparent;text-decoration:none;letter-spacing:2px;font-weight:600;transition:all .25s ease}
+.service-card .cta-button:hover{background:#c9a45c;color:#0b0b0b}
+.service-checkboxes{border:1px solid #c9a45c;padding:18px;margin:0 0 18px;background:#0c0c0c}
+.service-checkboxes legend{font-size:.72rem;text-transform:uppercase;letter-spacing:2px;color:#c9a45c;margin:0 0 12px;padding:0 8px}
+.check-option{display:flex!important;align-items:center;gap:10px!important;margin:0 0 9px!important;padding:11px 13px;border:1px solid #3b3324;background:#111;color:#eee;cursor:pointer}
+.check-option:last-child{margin-bottom:0!important}.check-option input{width:17px!important;height:17px!important;accent-color:#c9a45c;margin:0}.check-option span{font-size:.9rem;letter-spacing:.2px}
+.photo-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:30px;z-index:9999}
+.photo-lightbox.open{display:flex}.photo-lightbox img{max-width:96vw;max-height:92vh;width:auto;height:auto;object-fit:contain;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.photo-lightbox-close{position:absolute;top:18px;right:25px;border:0;background:none;color:#fff;font-size:48px;line-height:1;cursor:pointer}
+.gallery-item img{cursor:zoom-in}
+@media(max-width:800px){.service-grid{grid-template-columns:1fr}.rental-services{padding:50px 6%}}
