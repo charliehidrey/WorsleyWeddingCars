@@ -15,7 +15,7 @@ img{display:block;max-width:100%}
 .nav-cta{border:1px solid var(--gold);padding:12px 17px!important;color:var(--gold2)!important}
 .menu-toggle{display:none;background:none;border:0;color:white;font-size:27px}
 .hero{min-height:100vh;position:relative;background:#000;color:#fff;display:flex;align-items:center;overflow:hidden}
-.hero-image{position:absolute;inset:0;background-image:url('assets/hero-wide.jpg');background-size:cover;background-position:center 38%;transform:scale(1.02)}
+.hero-image{position:absolute;inset:0;background-image:url('hero-wide.jpg');background-size:cover;background-position:center 38%;transform:scale(1.02)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.26) 60%,rgba(0,0,0,.42)),linear-gradient(0deg,rgba(0,0,0,.5),transparent 55%)}
 .hero-content{position:relative;z-index:2;max-width:730px;padding:150px 7vw 100px}
 .eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#ddd;margin:0 0 18px}
