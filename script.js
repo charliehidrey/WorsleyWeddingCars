@@ -71,4 +71,39 @@ document.addEventListener("DOMContentLoaded", () => {
     slider.querySelector(".rental-prev")?.addEventListener("click", e => { e.stopPropagation(); show(index - 1); });
     slider.querySelector(".rental-next")?.addEventListener("click", e => { e.stopPropagation(); show(index + 1); });
   });
+
+  // Tight masonry-style gallery on desktop.
+  const gallery = document.querySelector(".gallery-grid");
+  const layoutGallery = () => {
+    if (!gallery) return;
+    if (window.innerWidth <= 900) return;
+    const rowHeight = 8;
+    const gap = 12;
+    gallery.style.display = "grid";
+    gallery.style.gridTemplateColumns = "repeat(4, minmax(0, 1fr))";
+    gallery.style.gridAutoRows = rowHeight + "px";
+    gallery.style.columnGap = gap + "px";
+    gallery.style.rowGap = gap + "px";
+    gallery.querySelectorAll(".gallery-item").forEach(item => {
+      item.style.gridColumn = "span 1";
+      item.style.gridRowEnd = "auto";
+    });
+    requestAnimationFrame(() => {
+      gallery.querySelectorAll(".gallery-item").forEach(item => {
+        const img = item.querySelector("img");
+        if (img) {
+          const h = img.getBoundingClientRect().height;
+          item.style.gridRowEnd = "span " + Math.max(1, Math.ceil((h + gap) / (rowHeight + gap)));
+        }
+      });
+    });
+  };
+  document.querySelectorAll(".gallery-grid img").forEach(img => {
+    if (!img.complete) img.addEventListener("load", layoutGallery);
+  });
+  window.addEventListener("load", layoutGallery);
+  window.addEventListener("resize", layoutGallery);
+  layoutGallery();
+
+
 });
