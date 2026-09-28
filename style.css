@@ -262,3 +262,34 @@ footer small{font-size:9px;letter-spacing:1px}
     display: none !important;
   }
 }
+
+
+/* Keep Enquiry visible beside the mobile menu */
+@media (max-width: 900px) {
+  .site-header .nav:not(.open) .enquire-button {
+    display: block !important;
+    position: absolute !important;
+    right: 5% !important;
+    top: 10px !important;
+    padding: 10px 15px !important;
+    border: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+    background: transparent !important;
+    font-size: 10px !important;
+    letter-spacing: 1.8px !important;
+    z-index: 102;
+  }
+
+  .site-header .nav:not(.open) {
+    display: block !important;
+    position: static !important;
+  }
+
+  .site-header .nav.open .enquire-button {
+    position: static !important;
+    display: block !important;
+    border: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+    background: transparent !important;
+  }
+}
