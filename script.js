@@ -1,5 +1,22 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav");
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
   const lightbox = document.getElementById("photoLightbox");
   const lightboxImage = document.getElementById("lightboxImage");
   const closeLightbox = () => {
@@ -32,6 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const dots = slider.querySelector(".rental-dots");
     let index = 0;
 
+    const show = (i) => {
+      index = (i + slides.length) % slides.length;
+      img.src = slides[index];
+      img.alt = slider.dataset.rentalAlt || "Rental photo";
+      if (counter) counter.textContent = `${index + 1} / ${slides.length}`;
+      dots?.querySelectorAll(".rental-dot").forEach((d,j) => d.classList.toggle("active", j === index));
+    };
+
     if (dots) {
       slides.forEach((_, i) => {
         const dot = document.createElement("button");
@@ -42,13 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         dots.appendChild(dot);
       });
     }
-    const show = (i) => {
-      index = (i + slides.length) % slides.length;
-      img.src = slides[index];
-      img.alt = slider.dataset.rentalAlt || "Rental photo";
-      if (counter) counter.textContent = `${index + 1} / ${slides.length}`;
-      dots?.querySelectorAll(".rental-dot").forEach((d,j) => d.classList.toggle("active", j === index));
-    };
+
     slider.querySelector(".rental-prev")?.addEventListener("click", e => { e.stopPropagation(); show(index - 1); });
     slider.querySelector(".rental-next")?.addEventListener("click", e => { e.stopPropagation(); show(index + 1); });
   });
