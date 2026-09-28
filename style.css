@@ -134,3 +134,14 @@ footer small{font-size:9px;letter-spacing:1px}
  .gallery-grid{gap:8px}.review-summary{flex-direction:column;gap:5px}
  .nav .enquire-button{padding:8px 10px}
 }
+
+
+@media(max-width:900px){
+  .menu-toggle{display:block!important;background:none;border:0;color:#fff;font-size:28px;cursor:pointer;padding:8px}
+  .site-header{position:relative}
+  .nav.open{display:flex!important;position:absolute;top:70px;right:4%;left:4%;z-index:100;background:#0b0b0b;border:1px solid #c9a45c;padding:18px;flex-direction:column;gap:16px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+  .nav.open a{display:block!important;font-size:12px;letter-spacing:2px;padding:8px}
+}
+@media(min-width:901px){
+  .menu-toggle{display:none}
+}
