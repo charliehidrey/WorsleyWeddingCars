@@ -297,13 +297,15 @@ footer small{font-size:9px;letter-spacing:1px}
 
 .mobile-enquiry-button{display:none}
 @media(max-width:900px){
-  .site-header{position:fixed!important}
+  .site-header{position:fixed!important;display:grid!important;grid-template-columns:minmax(0,1fr) auto auto!important;gap:8px!important;align-items:center!important;padding:10px 4%!important}
+  .site-header .brand{grid-column:1;min-width:0}
   .mobile-enquiry-button{
     display:flex!important;
-    position:absolute!important;
-    right:70px!important;
-    top:50%!important;
-    transform:translateY(-50%)!important;
+    position:static!important;
+    grid-column:2!important;
+    grid-row:1!important;
+    transform:none!important;
+    margin:0!important;
     align-items:center!important;
     justify-content:center!important;
     padding:9px 13px!important;
@@ -316,4 +318,5 @@ footer small{font-size:9px;letter-spacing:1px}
     letter-spacing:1.7px!important;
     z-index:103!important;
   }
+  .site-header .menu-toggle{grid-column:3!important;grid-row:1!important;position:static!important;margin:0!important}
 }
