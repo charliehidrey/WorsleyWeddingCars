@@ -320,3 +320,38 @@ footer small{font-size:9px;letter-spacing:1px}
   }
   .site-header .menu-toggle{grid-column:3!important;grid-row:1!important;position:static!important;margin:0!important}
 }
+
+
+/* Final mobile header cleanup */
+@media(max-width:900px){
+  /* Use only the dedicated mobile Enquiry button in the header. */
+  .site-header .nav:not(.open) .enquire-button{display:none!important;}
+  .site-header .nav:not(.open){display:none!important;}
+  .mobile-enquiry-button{
+    display:flex!important;
+    position:static!important;
+    grid-column:2!important;
+    grid-row:1!important;
+    border:1px solid var(--gold)!important;
+    color:var(--gold)!important;
+    background:#0b0b0b!important;
+    text-decoration:none!important;
+    padding:10px 14px!important;
+    min-width:108px!important;
+    height:44px!important;
+    align-items:center!important;
+    justify-content:center!important;
+    font-size:10px!important;
+    font-weight:600!important;
+    letter-spacing:1.8px!important;
+    z-index:103!important;
+  }
+  .site-header .menu-toggle{
+    grid-column:3!important;
+    grid-row:1!important;
+    width:44px!important;
+    height:44px!important;
+    margin:0!important;
+  }
+  .nav.open{display:flex!important;}
+}
